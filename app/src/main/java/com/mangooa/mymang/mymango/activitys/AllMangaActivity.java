@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,6 +42,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 
 public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.OnItemClickListener {
@@ -51,7 +54,7 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
     private RequestQueue requestQueue;
     public static MangoDataBase mangoDataBase;
     private String s;
-    private ImageView imageBookmarks, imageHome ,imageViewSearch;
+    private ImageView imageBookmarks, imageHome, imageViewSearch;
     private int count = 1;
     private Mango mango;
     final int DIALOG_EXIT = 1;
@@ -179,11 +182,30 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
             }
         });
 
+        editTextSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d("ooooo", charSequence.toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         imageViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                String searchText = editTextSearch.getText().toString();
+                Log.d("ooooo", searchText);
+                Log.d("ooooo", "3");
             }
         });
 
