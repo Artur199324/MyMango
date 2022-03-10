@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/allmangonav"
+    app:startDestination="@id/allMangoFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.mangooa.mymang.mymango.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_allMangoFragment2"
+            app:destination="@id/allMangoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allMangoFragment"
+        android:name="com.mangooa.mymang.mymango.fragment.AllMangoFragment"
+        android:label="fragment_all_mango"
+        tools:layout="@layout/fragment_all_mango" >
+        <action
+            android:id="@+id/action_allMangoFragment_to_searchFragment3"
+            app:destination="@id/searchFragment" />
+    </fragment>
+</navigation>

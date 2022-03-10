@@ -58,7 +58,6 @@ public class ReadMangaActivity extends AppCompatActivity {
     public static int position;
     final int DIALOG = 1;
     boolean pp = false;
-    boolean i = true;
     ArrayList<ChapterMango> arrayChapter;
     Button buttonNext, buttonPrevious, buttonnextchapter;
     ConstraintLayout constraiMango;
@@ -67,7 +66,7 @@ public class ReadMangaActivity extends AppCompatActivity {
     int bbbb;
     int rrr;
     ImageView homeImageView, imageViewbookmark, imageViewSetings, imageViewСhapter;
-    boolean ff = false;
+    public static boolean ff = false;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override

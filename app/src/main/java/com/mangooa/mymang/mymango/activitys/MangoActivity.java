@@ -254,8 +254,14 @@ public class MangoActivity extends AppCompatActivity {
             finishAffinity();
             fl = false;
         } else {
-            startActivity(new Intent(getApplicationContext(), AllMangaActivity.class));
-            finishAffinity();
+            if (ReadMangaActivity.ff == true) {
+                startActivity(new Intent(getApplicationContext(), AllMangaActivity.class));
+                finishAffinity();
+                ReadMangaActivity.ff = false;
+            } else {
+                super.onBackPressed();
+            }
+
         }
     }
 }
