@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Mango</string>
+    <string name="textViewNosave">Вы еще не сохранили ни одну мангу</string>
+    <string name="buttonDiscript">Описание</string>
+    <string name="buttonChapter">Главы</string>
+    <string name="mangoSaveButton">Добавить и избранное</string>
+    <string name="mangoDellButton">Удалить из избранного</string>
+    <string name="toastStringSave">Добавлино и избранное</string>
+    <string name="toastStringSaveInRead">Добавлено в избранное и закладки</string>
+    <string name="toastStringSaveInRead2">Добавлена закладка</string>
+    <string name="toastStringDell">Удаленно из избранное</string>
+    <string name="nointernetconnection">Нет подключения к интернету</string>
+    <string name="exit">Выйти из приложения?</string>
+    <string name="yes">да</string>
+    <string name="no">нет</string>
+    <string name="ower">Вы прочитали всю мангу</string>
+    <string name="textViewNoChapter">Манга пока не доступна</string>
+    <string name="chapternumberstr">Вы читаете главу: </string>
+</resources>

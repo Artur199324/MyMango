@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraiMango"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#070707">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/webViewmango"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></WebView>
+
+    <android.widget.Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="20dp"
+        android:background="#101010"
+        android:text="следующая"
+        android:textColor="#F8F6F6"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.widget.Button
+        android:id="@+id/buttonPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="#101010"
+        android:text="предыдущий"
+        android:textColor="#F8F6F6"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/homeImageView"
+        android:layout_width="80dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="20dp"
+        android:background="#000000"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webViewmango"
+        app:srcCompat="@drawable/ic_launcher_home_foreground"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageViewbookmark"
+        android:layout_width="80dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webViewmango"
+        app:srcCompat="@drawable/ic_launcher_not_foreground" />
+
+    <ImageView
+        android:id="@+id/imageViewSetings"
+        android:layout_width="80dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNext"
+        app:layout_constraintStart_toEndOf="@+id/imageViewСhapter"
+        app:layout_constraintTop_toBottomOf="@+id/webViewmango"
+        app:srcCompat="@drawable/ic_launcher_lsetings_foreground" />
+
+    <ImageView
+        android:id="@+id/imageViewСhapter"
+        android:layout_width="80dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSetings"
+        app:layout_constraintStart_toEndOf="@+id/homeImageView"
+        app:layout_constraintTop_toBottomOf="@+id/webViewmango"
+        app:srcCompat="@drawable/ic_launcher_list_foreground" />
+
+    <android.widget.Button
+        android:id="@+id/buttonnextchapter"
+        android:layout_width="177dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="1dp"
+        android:background="#020202"
+        android:text="следующая глава"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webViewmango" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

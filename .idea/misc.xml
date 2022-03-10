@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_launcher_home_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_launcher_in_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_launcher_list_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_launcher_list_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_launcher_lsetings_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_launcher_not_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_launcher_not_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/font/.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout-land/readmango.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/all_manga.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/bookmarks.xml" value="0.264" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/chaptermangoadapter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/dialog.xml" value="0.176" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/fragment_chapter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/fragment_description.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/mango_activity.xml" value="0.4" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/mango_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/readmango.xml" value="0.4" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/layout/start.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

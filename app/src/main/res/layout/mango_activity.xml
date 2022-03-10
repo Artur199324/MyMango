@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="414dp"
+        android:layout_height="293dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="298dp"
+            android:background="#DEDBFF">
+
+            <android.widget.TextView
+                android:id="@+id/textViewTitle"
+                style="@android:style/Widget.Material.TextView"
+                android:layout_width="217dp"
+                android:layout_height="135dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/lobster"
+                android:includeFontPadding="false"
+                android:paddingRight="10sp"
+                android:singleLine="false"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.619"
+                app:layout_constraintStart_toEndOf="@+id/imagePosterBig"
+                app:layout_constraintTop_toTopOf="@+id/imagePosterBig"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/imagePosterBig"
+                android:layout_width="138dp"
+                android:layout_height="163dp"
+                android:layout_marginStart="26dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.177"
+                tools:ignore="MissingConstraints" />
+
+            <android.widget.Button
+                android:id="@+id/mangoSaveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:padding="10sp"
+                android:text="@string/mangoSaveButton"
+                android:textColor="@color/textColorMango"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.791"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <android.widget.Button
+                android:id="@+id/mangoDellButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:padding="10sp"
+                android:text="@string/mangoDellButton"
+                android:textColor="@color/textColorMango"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.791"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewСhapter"
+                android:layout_width="118dp"
+                android:layout_height="73dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/mangoDellButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imagePosterBig"
+                app:layout_constraintVertical_bias="0.84000003"
+                app:srcCompat="@drawable/ic_launcher_in_foreground" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <android.widget.Button
+        android:id="@+id/buttonDiscript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/myColor"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:text="@string/buttonDiscript"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <android.widget.Button
+        android:id="@+id/buttonChapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/myColor"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:text="@string/buttonChapter"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <FrameLayout
+        android:layout_width="393dp"
+        android:layout_height="329dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDiscript"
+        tools:context=".activitys.MangoActivity">
+
+        <fragment
+            android:id="@+id/dydsb"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navGraph="@navigation/navg" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

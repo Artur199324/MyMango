@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constLay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.AllMangaActivity">
+
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="308dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChapter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/myColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
+    <ImageView
+        android:id="@+id/imageHome"
+        android:layout_width="74dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewChapter"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <ImageView
+        android:id="@+id/bookmarks"
+        android:layout_width="74dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/ic_baseline_favorite_24"
+        app:layout_constraintBottom_toBottomOf="@+id/imageHome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageHome"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="74dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/ic_baseline_person_24"
+        app:layout_constraintBottom_toBottomOf="@+id/imageHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewChapter"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageViewSearch"
+        android:layout_width="75dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewChapter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
