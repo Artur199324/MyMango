@@ -279,9 +279,7 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
         imageViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String searchText = editTextSearch.getText().toString();
-                Log.d("ooooo", searchText);
-                Log.d("ooooo", "3");
+                
             }
         });
 
