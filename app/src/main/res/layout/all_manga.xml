@@ -77,12 +77,12 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imageViewSearch"
+        android:id="@+id/imageViewFilter"
         android:layout_width="75dp"
         android:layout_height="54dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="2dp"
-        android:src="@drawable/ic_baseline_search_24"
+        android:src="@drawable/ic_launcher_filter_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextSearch"
         app:layout_constraintTop_toTopOf="parent" />

@@ -64,13 +64,15 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
     private RequestQueue requestQueue;
     public static MangoDataBase mangoDataBase;
     private String s;
-    private ImageView imageBookmarks, imageHome, imageViewSearch;
+    private ImageView imageBookmarks, imageHome, imageViewFilter;
     private int count = 1;
     private Mango mango;
-    final int DIALOG_EXIT = 1;
+    final int DIALOG_EXIT = 2;
+    final int DIALOG_FILTER = 1;
     public ConstraintLayout constLay;
     private EditText editTextSearch;
     private boolean searchmang = false;
+    String sort;
     NavController navControllerAllMan;
     String urll;
 
@@ -87,9 +89,8 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
         imageHome = findViewById(R.id.imageHome);
         constLay = findViewById(R.id.constLay);
         editTextSearch = findViewById(R.id.editTextSearch);
-        imageViewSearch = findViewById(R.id.imageViewSearch);
-
-
+        imageViewFilter = findViewById(R.id.imageViewFilter);
+        sort = getSharedPreferences(getPackageName(), MODE_PRIVATE).getString("sort", "new");
         requestQueue = Volley.newRequestQueue(this);
         navControllerAllMan = Navigation.findNavController(this, R.id.allMan);
         getMango();
@@ -101,7 +102,7 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
                 if (isLastItemDisplaying(recyclerView)) {
                     count++;
                     String page = String.valueOf(count);
-                    String url = mangoFirstQuiru + page + mangoFirstQuiruPart2;
+                    String url = mangoFirstQuiru + page + mangoFirstQuiruPart2 + sort;
 
                     new Thread(new Runnable() {
                         @Override
@@ -213,8 +214,7 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
                 }
 
                 if (i2 == 0) {
-//                 startActivity(new Intent(getApplicationContext(),AllMangaActivity.class));
-//                 finishAffinity();
+                    ;
                     navControllerAllMan.navigate(R.id.allMangoFragment);
                     getMango();
                 } else {
@@ -228,8 +228,6 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
                                 HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(urll).openConnection();
                                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
                                 String sss = bufferedReader.readLine();
-                                Log.d("ooo", sss);
-                                Log.d("oooo", "---------------------------------------");
 
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -274,10 +272,10 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
             }
         });
 
-        imageViewSearch.setOnClickListener(new View.OnClickListener() {
+        imageViewFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                showDialog(DIALOG_FILTER);
             }
         });
 
@@ -287,7 +285,7 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
     private void getMango() {
 
         String page = String.valueOf(count);
-        String url = mangoFirstQuiru + page + mangoFirstQuiruPart2;
+        String url = mangoFirstQuiru + page + mangoFirstQuiruPart2 + sort;
         mangos = new ArrayList<>();
         new Thread(new Runnable() {
             @Override
@@ -393,6 +391,62 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
             adb.setCancelable(false);
             return adb.create();
         }
+
+        if (id == DIALOG_FILTER) {
+            String neww = getResources().getString(R.string.neww);
+            String popular = getResources().getString(R.string.popular);
+            String rating = getResources().getString(R.string.rating);
+            String[] catNamesArray = {neww, popular, rating};
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.sorting);
+
+            int item = 0;
+            switch (sort) {
+                case "new":
+                    item = 0;
+                    break;
+                case "popular":
+                    item = 1;
+                    break;
+                case "rating":
+                    item = 2;
+                    break;
+            }
+
+            builder.setSingleChoiceItems(catNamesArray, item,
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,
+                                            int item) {
+                            switch (item) {
+                                case 0:
+                                    sort = "new";
+                                    break;
+                                case 1:
+                                    sort = "popular";
+                                    break;
+                                case 2:
+                                    sort = "rating";
+                                    break;
+                            }
+                        }
+                    });
+            builder.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int id) {
+                    getSharedPreferences(getPackageName(), MODE_PRIVATE).edit().putString("sort", sort).apply();
+                    getMango();
+                }
+            });
+            builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int id) {
+
+                }
+            });
+
+            return builder.create();
+        }
         return super.onCreateDialog(id);
     }
 
@@ -408,6 +462,8 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
 
             }
         }
+
     };
+
 }
 

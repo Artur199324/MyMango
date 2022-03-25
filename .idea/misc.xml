@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_filter_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_filter_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_home_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_home_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_in_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_list_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_list_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_lsetings_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_lsetings_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_not_background.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/drawable/ic_launcher_not_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/layout-land/readmango.xml" value="0.3104166666666667" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/layout/all_manga.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/layout/fragment_all_mango.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/layout/fragment_description.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/layout/fragment_search.xml" value="0.128" />
+        <entry key="..\:/Users/artur/AndroidStudioProjects/Mango/app/src/main/res/layout/mango_activity.xml" value="0.4" />
         <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2703125" />
         <entry key="..\:/Users/artur/AndroidStudioProjects/MyMango/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2703125" />

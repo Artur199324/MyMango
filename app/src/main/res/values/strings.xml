@@ -16,6 +16,12 @@
     <string name="ower">Вы прочитали всю мангу</string>
     <string name="textViewNoChapter">Манга пока не доступна</string>
     <string name="chapternumberstr">Вы читаете главу: </string>
+    <string name="neww">Новинка</string>
+    <string name="popular">Популярные</string>
+    <string name="rating">По рейтингу</string>
+    <string name="sorting">Сортировка:</string>
+    <string name="OK">OK</string>
+    <string name="cancel">Отмена</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

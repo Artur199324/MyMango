@@ -41,12 +41,14 @@ public class MangoActivity extends AppCompatActivity {
     private String s;
     private String part = "-";
     private ImageView imagePosterBig, imageViewСhapter;
-    private TextView textViewTitle;
+    private TextView textViewTitle, textViewtTanslation,textViewRating;
     private String urlMango;
     private String url;
     private String urlFull = null;
     private ArrayList<Entity> saveUrl;
     public static String description;
+    private String strTanslation;
+    private String strRating;
     public static Entity entity;
     public static int idEntity;
     public static boolean tt = false;
@@ -63,6 +65,8 @@ public class MangoActivity extends AppCompatActivity {
         setContentView(R.layout.mango_activity);
         imagePosterBig = findViewById(R.id.imagePosterBig);
         textViewTitle = findViewById(R.id.textViewTitle);
+        textViewtTanslation = findViewById(R.id.textViewtTanslation);
+        textViewRating = findViewById(R.id.textViewRating);
         mangoActivity = this;
         ChapterMangoAdapter.mangoActivity = this;
         arrayListChapter = new ArrayList<>();
@@ -120,6 +124,8 @@ public class MangoActivity extends AppCompatActivity {
                                 String title = jsonObject.getString("ru_name");
                                 description = jsonObject.getString("description");
                                 String urlImg = jsonObject.getString("image_url");
+                                strTanslation = jsonObject.getString("translate");
+                                strRating = jsonObject.getString("rating");
                                 urlMango = jsonObject.getString("url");
                                 JSONArray jsonArrayChapters = jsonObject.getJSONArray("chapters");
                                 for (int i = 0; i < jsonArrayChapters.length(); i++) {
@@ -135,6 +141,8 @@ public class MangoActivity extends AppCompatActivity {
 
                                 textViewTitle.setText(title);
                                 textBigText.setText(description);
+                                textViewtTanslation.setText("Перевод: "+strTanslation);
+                                textViewRating.setText("Рейтинг: " + strRating);
                                 Picasso.get().load(urlImg).fit().centerInside().into(imagePosterBig);
                                 if (part == "-") {
                                     tt = true;

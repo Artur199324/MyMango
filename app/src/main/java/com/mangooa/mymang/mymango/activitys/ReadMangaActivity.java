@@ -299,8 +299,12 @@ public class ReadMangaActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                webViewmango.loadUrl(arrayListUrl.get(b));
-                a = arrayListUrl.size();
+                try {
+                    webViewmango.loadUrl(arrayListUrl.get(b));
+                    a = arrayListUrl.size();
+                }catch (Exception e){
+
+                }
             }
         }, 1800);
 
