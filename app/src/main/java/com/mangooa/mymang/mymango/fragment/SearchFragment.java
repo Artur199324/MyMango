@@ -18,14 +18,15 @@ public class SearchFragment extends Fragment {
 
     public static RecyclerView recyclerViewSearch;
     public static AllMangaActivity allMangaActivity;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-       View view = inflater.inflate(R.layout.fragment_search, container, false);
-       recyclerViewSearch = view.findViewById(R.id.recyclerViewSearch);
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
+        recyclerViewSearch = view.findViewById(R.id.recyclerViewSearch);
         recyclerViewSearch.hasFixedSize();
         recyclerViewSearch.setLayoutManager(new LinearLayoutManager(allMangaActivity.getApplicationContext()));
-       return view;
+        return view;
     }
 }

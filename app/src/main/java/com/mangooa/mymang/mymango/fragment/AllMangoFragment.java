@@ -25,9 +25,8 @@ public class AllMangoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_all_mango, container, false);
         recyclerView = view.findViewById(R.id.recyclerViewChapter);
-
-
-
+        recyclerView.hasFixedSize();
+        recyclerView.setLayoutManager(new LinearLayoutManager(allMangaActivity));
 
      return view;
     }

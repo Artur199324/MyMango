@@ -58,7 +58,6 @@ import java.util.ArrayList;
 public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.OnItemClickListener {
 
 
-
     public static MangoAdapter mangoAdapter;
     private ArrayList<Mango> mangos;
     private ArrayList<Mango> mangosSearch;
@@ -83,15 +82,13 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
         getWindow().addFlags(1024);
         ReadMangaActivity.ooo = false;
         AllMangoFragment.allMangaActivity = this;
-        recyclerView.hasFixedSize();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         SearchFragment.allMangaActivity = this;
         imageBookmarks = findViewById(R.id.bookmarks);
         imageHome = findViewById(R.id.imageHome);
         constLay = findViewById(R.id.constLay);
         editTextSearch = findViewById(R.id.editTextSearch);
         imageViewSearch = findViewById(R.id.imageViewSearch);
-        mangos = new ArrayList<>();
+
 
         requestQueue = Volley.newRequestQueue(this);
         navControllerAllMan = Navigation.findNavController(this, R.id.allMan);
@@ -210,63 +207,64 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
                 String str = charSequence.toString();
                 try {
 
-                     urll = mangoSearchstr + URLEncoder.encode(str, String.valueOf(StandardCharsets.UTF_8)) + mangoSearchstrPart2;
+                    urll = mangoSearchstr + URLEncoder.encode(str, String.valueOf(StandardCharsets.UTF_8)) + mangoSearchstrPart2;
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
 
-              if (i2 == 0){
-                 startActivity(new Intent(getApplicationContext(),AllMangaActivity.class));
-                 finishAffinity();
+                if (i2 == 0) {
+//                 startActivity(new Intent(getApplicationContext(),AllMangaActivity.class));
+//                 finishAffinity();
+                    navControllerAllMan.navigate(R.id.allMangoFragment);
+                    getMango();
+                } else {
+                    navControllerAllMan.navigate(R.id.searchFragment);
+                    mangosSearch = new ArrayList<>();
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
 
-              }else {
-                  navControllerAllMan.navigate(R.id.searchFragment);
-                  mangosSearch = new ArrayList<>();
-                  new Thread(new Runnable() {
-                      @Override
-                      public void run() {
+                            try {
+                                HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(urll).openConnection();
+                                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+                                String sss = bufferedReader.readLine();
+                                Log.d("ooo", sss);
+                                Log.d("oooo", "---------------------------------------");
 
-                          try {
-                              HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(urll).openConnection();
-                              BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
-                              String sss = bufferedReader.readLine();
-                              Log.d("ooo",sss);
-                              Log.d("oooo","---------------------------------------");
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            JSONArray jsonArray = new JSONArray(sss);
+                                            for (int i = 0; i < jsonArray.length(); i++) {
+                                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                                String title = jsonObject.getString("ru_name");
+                                                String year = jsonObject.getString("year");
+                                                String imgUrl = jsonObject.getString("image_url");
+                                                String id = jsonObject.getString("id");
+                                                mango = new Mango();
+                                                mango.setTitle(title);
+                                                mango.setYear(year);
+                                                mango.setImgUrl(imgUrl);
+                                                mango.setId(id);
+                                                mangosSearch.add(mango);
+                                            }
 
-                              runOnUiThread(new Runnable() {
-                                  @Override
-                                  public void run() {
-                                      try {
-                                          JSONArray jsonArray = new JSONArray(sss);
-                                          for (int i = 0; i < jsonArray.length(); i++) {
-                                              JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                              String title = jsonObject.getString("ru_name");
-                                              String year = jsonObject.getString("year");
-                                              String imgUrl = jsonObject.getString("image_url");
-                                              String id = jsonObject.getString("id");
-                                              mango = new Mango();
-                                              mango.setTitle(title);
-                                              mango.setYear(year);
-                                              mango.setImgUrl(imgUrl);
-                                              mango.setId(id);
-                                              mangosSearch.add(mango);
-                                          }
+                                            mangoAdapter = new MangoAdapter(AllMangaActivity.this, mangosSearch);
+                                            mangoAdapter.setOnItemClickListener((MangoAdapter.OnItemClickListener) AllMangaActivity.this);
+                                            recyclerViewSearch.setAdapter(mangoAdapter);
+                                        } catch (Exception e) {
+                                        }
 
-                                          mangoAdapter = new MangoAdapter(AllMangaActivity.this, mangosSearch);
-                                          mangoAdapter.setOnItemClickListener((MangoAdapter.OnItemClickListener) AllMangaActivity.this);
-                                          recyclerViewSearch.setAdapter(mangoAdapter);
-                                      } catch (Exception e) {
-                                      }
+                                    }
+                                });
+                            } catch (Exception e) {
 
-                                  }
-                              });
-                          }catch (Exception e){
-
-                              Log.d("ooo" , e.getMessage().toString());
-                          }
-                      }
-                  }).start();
-              }
+                                Log.d("ooo", e.getMessage().toString());
+                            }
+                        }
+                    }).start();
+                }
 
             }
 
@@ -279,9 +277,7 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
         imageViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String searchText = editTextSearch.getText().toString();
-                Log.d("ooooo", searchText);
-                Log.d("ooooo", "3");
+
             }
         });
 
@@ -292,7 +288,7 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
 
         String page = String.valueOf(count);
         String url = mangoFirstQuiru + page + mangoFirstQuiruPart2;
-
+        mangos = new ArrayList<>();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -367,11 +363,11 @@ public class AllMangaActivity extends AppCompatActivity implements MangoAdapter.
 
         Mango mango = null;
 
-        if (searchmang == false){
+        if (searchmang == false) {
             for (int i = 0; i < mangos.size(); i++) {
                 mango = mangos.get(position);
             }
-        }else {
+        } else {
             for (int i = 0; i < mangosSearch.size(); i++) {
                 mango = mangosSearch.get(position);
             }
